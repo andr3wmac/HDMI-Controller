@@ -1,0 +1,6 @@
+{
+ "uuid": "hdmi-controller@andrewmac.ca",
+ "name": "HDMI Controller",
+ "description": "Cinnamon Applet for HDMI Controller",
+ "icon": "monitor"
+}

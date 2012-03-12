@@ -1,0 +1,4 @@
+Drop the folder hdmi-controller@andrewmac.ca into /usr/share/cinnamon/applets/ folder and then restart cinammon.
+
+WARNING: if the applet is loaded from a different directory other than /usr/share/cinnamon/applets/ you must
+edit the PATH variable in applet.js to reflect the change.
