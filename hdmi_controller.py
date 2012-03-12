@@ -70,8 +70,12 @@ class HDMIController:
 
     def cmd(self, command):
         result = commands.getoutput(command)
-        self.log.debug("Executed command '" + command + "' Result: " + result) 
+        self.log("Executed command '" + command + "' Result: " + result) 
         return result
+
+    def log(msg):
+        if ( self.logger ):
+            self.logger.debug(msg)
 
     def addMode(self, display, res):
         # Get mode line.
@@ -123,12 +127,17 @@ class HDMIController:
 
     def __init__(self):
         # setup logging.
-        self.log = logging.getLogger('hdmi_controller')
-        hdlr = logging.FileHandler('hdmi_controller.log')
-        formatter = logging.Formatter('%(asctime)s %(levelname)s : %(message)s')
-        hdlr.setFormatter(formatter)
-        self.log.addHandler(hdlr) 
-        self.log.setLevel(logging.DEBUG)
+        try:
+            hdlr = logging.FileHandler('hdmi_controller.log')
+            formatter = logging.Formatter('%(asctime)s %(levelname)s : %(message)s')
+            hdlr.setFormatter(formatter)
+            self.logger = logging.getLogger('hdmi_controller')
+            self.logger.addHandler(hdlr) 
+            self.logger.setLevel(logging.DEBUG)
+        except:
+            pass
+
+        # Load configuration.
         self.loadConfig()
 
         # Process any args.

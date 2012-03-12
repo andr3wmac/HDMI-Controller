@@ -1,4 +1,4 @@
-const PATH = "/home/andrew/.local/share/cinnamon/applets/hdmi-controller@andrewmac.ca/";
+const PATH = "CHANGEME";
 
 const Main = imports.ui.main;
 const Applet = imports.ui.applet;
