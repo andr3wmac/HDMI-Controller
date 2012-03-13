@@ -1,5 +1,5 @@
 # Set the PATH variable in applet.js
-echo Settings applet.js PATH variable..
+echo Setting the applet.js PATH variable..
 NEW_LOCATION=${HOME}/.local/share/cinnamon/applets/
 NEW_DIR=${NEW_LOCATION}hdmi-controller@andrewmac.ca/
 REGEX="s/CHANGEME/${NEW_DIR//\//\\/}/"
